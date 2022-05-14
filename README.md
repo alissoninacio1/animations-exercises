@@ -1,2 +1,2 @@
-# planets-animations
-Learning animations with plantes.
+# animations
+Learning animations with plantes and more...
