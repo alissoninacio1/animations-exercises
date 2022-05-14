@@ -1,0 +1,512 @@
+/* things to put in readme - webkit and @keyframes  */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'E M'
+                         'J S';
+  
+}
+
+.first-planet,
+.third-planet {
+  /* This section calls the slideInFromLeft animation we'll define below */
+  animation: 1s ease-out 0.5s 1 slideInFromLeft;
+}
+
+.second-planet,
+.fourth-planet {
+  /* This section calls the slideInFromLeft animation we'll define below */
+  animation: 1s ease-out 0.4s 1 slideInFromRight;
+}
+
+
+@keyframes slideInFromLeft {
+    0% {
+      transition: all 0.5s ease-out;
+      transform: translateY(-5%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(5%);
+      transition: all 0.5s ease-out;
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+} */
+
+.planet {
+    display: flex;
+    flex-direction: column;
+}
+
+.planet h2 {
+    color: #fff;
+    font-size: 4rem;
+
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+
+.planet .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* reflection using webkit */
+
+    -webkit-box-reflect: below 0.5px linear-gradient(#0001, #0002);
+}
+
+
+
+/* -------------------EARTH ---------------*/
+
+.planet-earth {
+    position: relative;
+    min-width: 50%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #182357;
+}
+
+.planet-earth .container .loader {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+
+    animation: animate 4s linear infinite;
+} 
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+
+}
+
+.planet-earth .container .loader:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, rgba(0,255,249,0.4));
+    background-size: 12.5rem  30rem;
+    background-repeat: no-repeat;
+    border-top-left-radius: 12.5rem;
+    border-bottom-left-radius: 12.5rem;
+}
+
+.planet-earth .container .loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.625rem;
+    height: 0.625rem;
+    background: #00fff9;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px #00fff9,
+                0 0 20px #00fff9,
+                0 0 30px #00fff9,
+                0 0 40px #00fff9,
+                0 0 50px #00fff9,
+                0 0 60px #00fff9,
+                0 0 70px #00fff9,
+                0 0 80px #00fff9,
+                0 0 90px #00fff9,
+                0 0 100px #00fff9;
+}
+
+.container .loader span {
+    position: absolute;
+    top: 0.625rem;
+    left: 0.625rem;
+    right: 0.625rem;
+    bottom: 0.625rem;
+    background:#182357;
+    border-radius: 50%;
+
+}
+
+.container .earth {
+    position: absolute;
+    width: 21.25rem;
+    height: 21.25rem;
+    background: url(https://c3teachers.org/wp-content/uploads/2019/09/satellite-map-of-the-world_wm00875.jpg);
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 20px #03a9f4,
+                    0 0 120px #03a9f4; 
+    animation: animateEarth 15s linear infinite;
+    animation-delay: -2s;
+}
+
+@keyframes animateEarth {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 162.5%;
+    }
+}
+ 
+
+
+/* -------------------MARS ---------------*/
+
+
+
+.planet-mars {
+    position: relative;
+    min-width: 50%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #190703;
+}
+
+.planet-mars .container .loader {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+
+    animation: animate 4s linear infinite;
+} 
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+
+}
+
+.planet-mars .container .loader:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, rgba(235,128,64, 54.4));
+    background-size: 12.5rem  30rem;
+    background-repeat: no-repeat;
+    border-top-left-radius: 12.5rem;
+    border-bottom-left-radius: 12.5rem;
+}
+
+.planet-mars .container .loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.625rem;
+    height: 0.625rem;
+    background: #ff5722;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px #ff5722,
+                0 0 20px #ff5722,
+                0 0 30px #ff5722,
+                0 0 40px #ff5722,
+                0 0 50px #ff5722,
+                0 0 60px #ff5722,
+                0 0 70px #ff5722,
+                0 0 80px #ff5722,
+                0 0 90px #ff5722,
+                0 0 100px #ff5722;
+}
+
+.planet-mars .loader span {
+    position: absolute;
+    top: 0.625rem;
+    left: 0.625rem;
+    right: 0.625rem;
+    bottom: 0.625rem;
+    background:#190703;
+    border-radius: 50%;
+
+}
+
+.container .mars {
+    position: absolute;
+    width: 21.25rem;
+    height: 21.25rem;
+    background: url(https://thumbs.dreamstime.com/b/mars-hdri-environment-map-round-panorama-spherical-panorama-equidistant-projection-high-resolution-panorama-hdri-environment-map-134400338.jpg);
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 20px #ff5722,
+                    0 0 120px #ff5722; 
+    animation: animateMars 20s linear infinite;
+}
+
+@keyframes animateMars {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -100px;
+    }
+}
+
+
+
+/* -------------------JUPITER ---------------*/
+
+
+.planet-jupiter {
+    position: relative;
+    min-width: 50%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #190703;
+}
+
+.planet-jupiter .container .loader {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+
+    animation: animate 4s linear infinite;
+} 
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+
+}
+
+.planet-jupiter .container .loader:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, rgba(236,203,91, 50));
+    background-size: 12.5rem  30rem;
+    background-repeat: no-repeat;
+    border-top-left-radius: 12.5rem;
+    border-bottom-left-radius: 12.5rem;
+}
+
+.planet-jupiter .container .loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.625rem;
+    height: 0.625rem;
+    background: #facc4f;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px #facc4f,
+                0 0 20px #facc4f,
+                0 0 30px #facc4f,
+                0 0 40px #facc4f,
+                0 0 50px #facc4f,
+                0 0 60px #facc4f,
+                0 0 70px #facc4f,
+                0 0 80px #facc4f,
+                0 0 90px #facc4f,
+                0 0 100px #facc4f;
+}
+
+.planet-jupiter .loader span {
+    position: absolute;
+    top: 0.625rem;
+    left: 0.625rem;
+    right: 0.625rem;
+    bottom: 0.625rem;
+    background:#190703;
+    border-radius: 50%;
+
+}
+
+.container .jupiter {
+    position: absolute;
+    width: 21.25rem;
+    height: 21.25rem;
+    background: url(https://i.imgur.com/Lv4a8H7.jpg);
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 20px #664c28,
+                    0 0 120px #664c28; 
+    animation: animateJupiter 10s linear infinite;
+}
+
+@keyframes animateJupiter {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -100px;
+    }
+}
+
+
+
+/* -------------------SATURN ---------------*/
+
+.planet-saturn {
+    position: relative;
+    min-width: 50%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #190703;
+}
+
+.planet-saturn .container .loader {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+
+    animation: animate 4s linear infinite;
+} 
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+
+}
+
+.planet-saturn .container .loader:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, rgba(236,203,91, 50));
+    background-size: 12.5rem  30rem;
+    background-repeat: no-repeat;
+    border-top-left-radius: 12.5rem;
+    border-bottom-left-radius: 12.5rem;
+}
+
+.planet-saturn .container .loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.625rem;
+    height: 0.625rem;
+    background: #facc4f;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px #facc4f,
+                0 0 20px #facc4f,
+                0 0 30px #facc4f,
+                0 0 40px #facc4f,
+                0 0 50px #facc4f,
+                0 0 60px #facc4f,
+                0 0 70px #facc4f,
+                0 0 80px #facc4f,
+                0 0 90px #facc4f,
+                0 0 100px #facc4f;
+}
+
+.planet-saturn .loader span {
+    position: absolute;
+    top: 0.625rem;
+    left: 0.625rem;
+    right: 0.625rem;
+    bottom: 0.625rem;
+    background:#190703;
+    border-radius: 50%;
+
+}
+
+.container .saturn {
+    position: absolute;
+    width: 21.25rem;
+    height: 21.25rem;
+    background: url(https://img.blogs.es/anexom/wp-content/uploads/2022/01/saturno-portada.jpg);
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 20px #664c28,
+                    0 0 120px #664c28; 
+    animation: animateSaturn 10s linear infinite;
+}
+
+@keyframes animateSaturn {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -100px;
+    }
+}
