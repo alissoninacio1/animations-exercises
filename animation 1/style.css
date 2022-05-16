@@ -36,17 +36,17 @@ body {
 @keyframes slideInFromLeft {
     0% {
       transition: all 0.5s ease-out;
-      transform: translateY(-5%);
+      transform: translateX(-0.5px);
       opacity: 0.5;
     }
     100% {
-      transform: translateY(0);
+      transform: translateX(0);
     }
   }
 
   @keyframes slideInFromRight {
     0% {
-      transform: translateX(5%);
+      transform: translateX(0.5px);
       transition: all 0.5s ease-out;
       opacity: 0.5;
     }
