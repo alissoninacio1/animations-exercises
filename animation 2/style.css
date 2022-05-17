@@ -14,6 +14,18 @@ body {
     min-height: 100vh;
 
     background: #af1721;
+
+    animation: 1s ease-out 0.4s 1 appearing;
+}
+
+@keyframes appearing {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
 }
 
 .box {
@@ -28,6 +40,8 @@ body {
 
     background: #fff;
     box-shadow: 0 30px 60px rgba(0,0,0,.2);
+
+    border-radius: 30px;
 }
 
 .box .percent,

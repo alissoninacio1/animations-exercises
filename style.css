@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 100vh;
+    margin-top: 40vh;
+    animation: 1s ease-out 0.4s 1 appearing;
+
+    box-sizing: border-box;
+
+    background: #474444;
+}
+
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+
+}
+
+.container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+
+    box-shadow: 3px 3px #c0c0c0;
+}
+
+
+.container li {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    list-style: none;
+    margin: 10px auto;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #fff;
+
+    transition: .3s;
+}
+
+.container li:hover {
+
+    animation: 0.1s ease-out 0.2s 1 appearing;
+    opacity: 0;
+    animation-fill-mode: forwards; /*to doesn't come back to initial state, because its initial opacity state is 0*/
+    color: #c0c0c0;
+}
+
+
+@keyframes appearing {
+    from {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
